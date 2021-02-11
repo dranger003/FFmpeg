@@ -50,6 +50,8 @@ static enum AVPixelFormat dshow_pixfmt(DWORD biCompression, WORD biBitCount)
             case 32:
                 return AV_PIX_FMT_0RGB32;
         }
+    case 0x30313050:
+        return AV_PIX_FMT_P010LE;
     }
     return avpriv_find_pix_fmt(avpriv_get_raw_pix_fmt_tags(), biCompression); // all others
 }
